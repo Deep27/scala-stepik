@@ -30,7 +30,6 @@ calc42(x => {
 
 def sumTo(x: Int): Int = if (x == 0) 0 else x + sumTo(x - 1)
 calc42(sumTo)
-//calc42((x: Int) => if (x == 0) 0 else x + )
 def fix(f: (=> Int => Int) => Int => Int): Int => Int = f(fix(f))
 fix(rec => x => if (x == 0) 0 else x + rec(x - 1))(7)
 calc42(fix(rec => x => if (x == 0) 0 else x + rec(x - 1)))
