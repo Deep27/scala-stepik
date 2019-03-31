@@ -16,13 +16,16 @@ val searchOdd = (list: List[Int]) => searchInArray(_ % 2 == 1, list)
 val searchOddCurried = searchInArray curried (_ % 2 == 1)
 
 searchOdd(List(1, 2, 3, 4, 5))
+searchOddCurried(List(1, 2, 3, 4, 5))
 
 val add1 = (_: Int) + 1
+val addStr = (_ : String) + "123"
 val calc42 = (f: Int => Int) => f(42)
 calc42(add1)
+// calc42(addStr) // type mismatch
 calc42(x => {
   var y = x
-  for (i <- 1 to 3) {
+  for (_ <- 1 to 3) {
     y = x * x
   }
   y
